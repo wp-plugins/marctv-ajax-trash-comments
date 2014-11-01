@@ -1,0 +1,12 @@
+a.marctv-error {
+  color: red;
+    font-weight: 700;
+}
+
+a.marctv-ok {
+  color: green;
+}
+
+a.marctv-trash {
+  color: darkred;
+}
