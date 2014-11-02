@@ -3,7 +3,7 @@ Contributors: MarcDK
 Tags: MarcTV, comments, ajax, trash, delete, frontend, theme, german
 Requires at least: 3.0
 Tested up to: 4.0
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 
 == Description ==
 
@@ -26,9 +26,9 @@ comments that needed moderation. So I decided to make my life (and yours) easier
 
 == Changelog ==
 
-= 1.1.1 =
+= 1.1.2 =
 
-Fixed renaming bug. Seems I am not allowed to rename the plugin file. 
+Fixed renaming bug. Seems I am not allowed to rename the plugin file. I forgot to remove the old files. 
 
 = 1.1.0 =
 
