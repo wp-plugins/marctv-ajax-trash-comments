@@ -4,7 +4,7 @@
   Plugin Name: MarcTV Moderate Comments
   Plugin URI: http://marctv.de/blog/marctv-wordpress-plugins/
   Description: Trash and moderate comments in the frontend with one click.
-  Version: 1.1.2
+  Version: 1.1.3
   Author: MarcDK
   Author URI: http://www.marctv.de
   License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -17,9 +17,8 @@
 
  */
 
-
-
 function add_marctv_ajax_comment_scripts() {
+
 	/* load css and js in the frontend theme */
 	wp_enqueue_style(
 		"jquery.marctv-moderate", WP_PLUGIN_URL . "/" . dirname( plugin_basename( __FILE__ ) ) . "/marctv-moderate.css", false, "1.0" );
@@ -55,6 +54,7 @@ function add_marctv_ajax_comment_scripts() {
  * @return string
  */
 function get_marctv_ajax_links( $comment_text ) {
+
 	if ( current_user_can( 'moderate_comments' ) && is_single() ) {
 		$comment_id = get_comment_ID();
 		$nonce      = wp_create_nonce("delete-comment_$comment_id");
@@ -77,7 +77,6 @@ function get_marctv_ajax_links( $comment_text ) {
 	}
 	return $comment_text;
 }
-
 
 function marctv_trash_comment() {
 
@@ -107,6 +106,7 @@ function marctv_trash_comment() {
 }
 
 function marctv_replace_comment() {
+
 	/* retrieve comment id from post ajax request and sanitize to number */
 	$comment_id = filter_input( INPUT_POST, 'cid', FILTER_SANITIZE_NUMBER_FLOAT );
 
@@ -131,7 +131,6 @@ function marctv_replace_comment() {
 	}
 }
 
-
 function marctv_moderate_plugin_menu(){
 	add_options_page('MarcTV Moderate Comments', 'MarcTV Moderate Comments', 'manage_options', 'marctv_moderate', 'marctv_moderate_plugin_menu_options');
 }
@@ -151,16 +150,14 @@ function marctv_moderate_plugin_menu_options(){
 }
 
 function  marctv_moderate_activate() {
-	if(get_option('marctv-moderation-text')) {
+    if(!get_option('marctv-moderation-text')) {
 		/* Loading the textdomain. I could not figure out to prevent this here. */
 		load_plugin_textdomain( 'marctv-moderate', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
 		/* If the moderation text is empty fill it with the default text */
 		update_option('marctv-moderation-text',__( '[incorrect topic]', 'marctv-moderate' ));
-	}
+    }
 }
-
-
 
 add_filter( 'comment_text', 'get_marctv_ajax_links', 99 );
 
