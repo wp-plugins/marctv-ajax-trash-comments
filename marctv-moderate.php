@@ -160,9 +160,9 @@ class MarcTVModerateComments
             // Confirm dialog on front end for reporting.
             'confirm_report' => __('Are you sure you want to report this comment?', 'marctv-moderate'),
             // Message to show user after successfully reporting a comment.
-            'report_success' => __('The comment has been reported.', 'marctv-moderate'),
+            'report_success' => __('The comment has been reported', 'marctv-moderate'),
             // Message to show user after reporting a comment has failed.
-            'report_failed' => __('The comment has been reported.', 'marctv-moderate'),
+            'report_failed' => __('The comment has been reported', 'marctv-moderate'),
             // Message to show user after successfully replacing a comment.
             'replace_success' => __('The comment text has been replaced', 'marctv-moderate'),
             // Message to show user after replacing a comment has failed.
@@ -400,10 +400,10 @@ class MarcTVModerateComments
     {
         if (is_single()) {
             if (current_user_can('moderate_comments')) {
-                return $comment_reply_link . '<br /><br />' . $this->getReportLink() . ' | ' . $this->getTrashLink() . ' | ' . $this->getReplaceLink();
+                return $comment_reply_link . '<p class="marctv-moderate-links">' . $this->getReportLink() . ' | ' . $this->getTrashLink() . ' | ' . $this->getReplaceLink() . '</p>';
             } else {
                 if (!get_option($this->pluginPrefix . '_members_only')) {
-                    return $comment_reply_link . '<br /><br />' . $this->getReportLink();
+                    return $comment_reply_link . '<p class="marctv-moderate-links">' . $this->getReportLink() . '</p>';
                 }
             }
         }
