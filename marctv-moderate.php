@@ -3,7 +3,7 @@
 Plugin Name: MarcTV Moderate Comments
 Plugin URI: http://marctv.de/blog/marctv-wordpress-plugins/
 Description: Grants visitors the ability to report inappropriate comments and admins to replace and trash them in the frontend.
-Version:  1.2.2
+Version:  1.2.3
 Author:  Marc Tönsing, Peter Berglund
 Author URI: marctv.de
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -347,7 +347,7 @@ class MarcTVModerateComments
         $class = $this->pluginPrefix . "-report";
         $nonce = wp_create_nonce("report-comment-" . $id);
 
-        $link = sprintf('<a href="#" data-nonce="%s" data-cid="%s" class="%s">%s</a>',
+        $link = sprintf('<a rel="nofollow" href="javascript:void(0)" data-nonce="%s" data-cid="%s" class="%s">%s</a>',
             $nonce,
             $id,
             $class,
@@ -365,7 +365,7 @@ class MarcTVModerateComments
         $id = get_comment_ID();
         $class = $this->pluginPrefix . "-trash";
         $nonce = wp_create_nonce("trash-comment-" . $id);
-        $link = sprintf('<a href="#" data-nonce="%s" data-cid="%s" class="%s">%s</a>',
+        $link = sprintf('<a href="javascript:void(0)" data-nonce="%s" data-cid="%s" class="%s">%s</a>',
             $nonce,
             $id,
             $class,
@@ -383,7 +383,7 @@ class MarcTVModerateComments
         $id = get_comment_ID();
         $class = $this->pluginPrefix . "-replace";
         $nonce = wp_create_nonce("replace-comment-" . $id);
-        $link = sprintf('<a href="#" data-nonce="%s" data-cid="%s" class="%s">%s</a>',
+        $link = sprintf('<a href="javascript:void(0)" data-nonce="%s" data-cid="%s" class="%s">%s</a>',
             $nonce,
             $id,
             $class,
