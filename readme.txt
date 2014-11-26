@@ -3,7 +3,7 @@ Contributors:  MarcDK, lefalque
 Tags: comments, admin, ajax, flag, report, moderate, trash, replace
 Requires at least: 3.0
 Tested up to: 4.01
-Stable tag: 1.2.3
+Stable tag: 1.2.4
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,6 +36,10 @@ text which can be set in the settings.
 3. Review flagged comments in wp-admin.
 
 == Changelog ==
+
+= 1.2.4 =
+
+* Replaced comments in the backend are not marked as ok automatically. This saves clicks for moderators.
 
 = 1.2.3 =
 
