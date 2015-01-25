@@ -1,30 +1,64 @@
-=== MarcTV Moderate Comments  ===
-Contributors: MarcDK
-Tags: MarcTV, comments, ajax, trash, delete, frontend, theme, german
+=== MarcTV Moderate Comments ===
+Contributors:  MarcDK, lefalque
+Tags: marctv, comments, admin, ajax, flag, report, moderation, moderate, trash, replace
 Requires at least: 3.0
-Tested up to: 4.0
-Stable tag: 1.1.3
+Tested up to: 4.1
+Stable tag: 1.2.5
+License: GPL2
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-== Description ==
+Grants visitors the ability to report inappropriate comments and admins to replace and trash them in the frontend.
 
-Allows you to trash and/or replace comments with your custom moderation text in one click in the frontend.
+== Description == 
 
-You need to be logged in as admin or any user with comment moderation permissions. A "trash" link will appear beneath
-all comments in the frontend. Now you can mark comments as "trash" and they will disappear after a page reload.
-Don't worry: You can "untrash" them if it was a mistake until you reload.
+Adds a link next to the reply link below each comment, which allows visitors to flag comments as inappropriate.
+A sub page to comments in admin is added, where an administrator may review all the flagged comments and decide
+if they should be removed or not.
 
-You are also able to replace the comment text with a custom text which can be set in the settings. This action can not be undone.
+Admins or logged-in users with comment moderation permissions are able trash or replace comments with
+one click in the frontend. This action can not be undone. A "trash" link will appear bellow all comments.
+Don't worry: You can untrash them if until you reload. You are also able to replace the comment text with a custom
+text which can be set in the settings.
 
-The plugin was written using phpStorm while I was on a trip to San Francisco, CA. My blog suffers from so many
-comments that needed moderation. So I decided to make my life (and yours) easier. ;-)
+= Features =
 
+* Ability for visitors to report comments they find offensive.
+* Once a flagged comment has been deemed ok, it wont be able to be flagged again.
+* Flagging is done via ajax for smoother experience for the visitors.
+* Decide whether all visitors or only logged in users can report comments.
+* Trashing and Replacing with ajax in the frontend for faster moderation.
+* Fully localized. Comes with English and German translations.
 
 == Installation ==
 
-* Install plugin
-* Activate it
+1. Install and activate MarcTV Moderate via the WordPress.org repository.
+2. Let users flag comments at the front end. Trash and replace them as admin in the frontend, too.
+3. Review flagged comments in wp-admin.
 
 == Changelog ==
+
+= 1.2.5 =
+
+* Moved "report" link to the very end of each comment.
+
+= 1.2.4 =
+
+* Replaced comments in the backend are not marked as ok automatically. This saves clicks for moderators.
+
+= 1.2.3 =
+
+* Fixed anchor tag missing href.
+
+= 1.2.2 =
+
+* Links will no longer show up if Javascript is disabled.
+* New HTML structure for the links.
+* Small localisation changes.
+
+= 1.2 =
+
+* This is a feature merge of the plugin "ReportComments" by lefalque and "Ajax Trash and Replace
+Comments" by myself. I added a german translation and fixed php notices.
 
 = 1.1.3 =
 
