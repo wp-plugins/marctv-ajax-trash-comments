@@ -3,7 +3,7 @@
 Plugin Name: MarcTV Moderate Comments
 Plugin URI: http://marctv.de/blog/marctv-wordpress-plugins/
 Description: Grants visitors the ability to report inappropriate comments and admins to replace and trash them in the frontend.
-Version:  1.2.4
+Version:  1.2.5
 Author:  Marc Tönsing
 Author URI: marctv.de
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,7 +12,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 class MarcTVModerateComments
 {
 
-    private $version = '1.2.4';
+    private $version = '1.2.5';
     private $pluginPrefix = 'marctv-moderate';
     private $pluginUrl;
     private $strings;
@@ -69,7 +69,7 @@ class MarcTVModerateComments
      */
     public function frontendInit()
     {
-        add_filter('comment_text', array($this, 'printModerateLinks'));
+        add_filter('comment_text', array($this, 'printModerateLinks'),100,3);
 
         add_action('wp_ajax_' . $this->pluginPrefix . '_trash', array($this, 'trashComment'));
         add_action('wp_ajax_' . $this->pluginPrefix . '_replace', array($this, 'replaceComment'));
