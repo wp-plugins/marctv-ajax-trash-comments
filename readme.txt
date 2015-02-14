@@ -3,7 +3,7 @@ Contributors:  MarcDK, lefalque
 Tags: marctv, comments, admin, ajax, flag, report, moderation, moderate, trash, replace
 Requires at least: 3.0
 Tested up to: 4.1
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,9 +37,13 @@ text which can be set in the settings.
 
 == Changelog ==
 
+= 1.2.6 =
+
+Fixed a bug that prevented the report link from being shown for logged in users. Thanks KatieKat.
+
 = 1.2.5 =
 
-* Moved "report" link to the very end of each comment.
+Ensured compatibility to Wordpress 4.1.
 
 = 1.2.4 =
 
